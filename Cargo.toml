@@ -12,6 +12,9 @@ crate-type = ["cdylib", "rlib"]
 [features]
 default = [ "pyo3" ]
 
+[build]
+rustflags = ["-C", "link-arg=-undefined", "-C", "link-arg=dynamic_lookup"]
+
 [dependencies]
 num = "0.2"
 ndarray = { version = "0.13", features = ["rayon"] }
